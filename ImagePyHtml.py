@@ -18,7 +18,7 @@ for arg in args:
     while(y < height and x < width):
         r, g, b = im.getpixel((x, y))
         color = str(r) + "," + str(g) + "," + str(b)
-        html += "<td bgcolor=\"" + rgb2hex(r, g, b) + ")\"></td>"
+        html += "<td bgcolor=\"" + rgb2hex(r, g, b) + "\"></td>"
         x += 1
         if(x == width):
             y+=1
