@@ -15,7 +15,6 @@ for arg in args:
     im.thumbnail(size)
     img = im.convert("RGBA")
     width, height = img.size
-    end = width-1
     x = 0
     y = 0
     html = "<html><body><table border=\"0\" cellpadding=\"1\" cellspacing=\"0\"><tr>"    
@@ -24,13 +23,10 @@ for arg in args:
         last=""
         color=""
         while(x < width):
-            #print(x,y)
             rgbcol = img.getpixel((x, y))
             color = rgb2hex(rgbcol)
             x+=1
-            if(x == end):
-                print(x,y)
-            if (color != last or x == end ):
+            if (color != last or x == width):
                 if(col > 1):
                     html += "<td colspan=\"" + str(col) + "\" bgcolor=\"" + last + "\"></td>"
                 else:
