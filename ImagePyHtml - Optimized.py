@@ -12,8 +12,8 @@ def rgb2hex(rgbcol):
 
 for arg in args:
     im = Image.open(arg)
-    im.thumbnail(size)
     img = im.convert("RGBA")
+    img.thumbnail(size)  
     width, height = img.size
     x = 0
     y = 0
