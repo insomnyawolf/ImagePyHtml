@@ -26,11 +26,12 @@ for arg in args:
             rgbcol = img.getpixel((x, y))
             color = rgb2hex(rgbcol)
             x+=1
-            if (color != last or x == width):
+            if (color != last or x == width ):
                 if(col > 1):
                     html += "<td colspan=\"" + str(col) + "\" bgcolor=\"" + last + "\"></td>"
                 else:
-                    html += "<td bgcolor=\"" + last + "\"></td>"
+                    if (last != ""):
+                        html += "<td bgcolor=\"" + last + "\"></td>"
                 col = 1
             else:
                 col+=1
